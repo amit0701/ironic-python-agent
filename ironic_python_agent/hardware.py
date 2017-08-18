@@ -85,7 +85,7 @@ def _check_for_iscsi():
     - If no connection is detected we simply return.
     """
     try:
-        utils.execute('iscsistart', '-f')
+        utils.execute('iscsistart', '--debug=1', '-f')
     except (processutils.ProcessExecutionError, EnvironmentError) as e:
         LOG.debug("No iscsi connection detected. Skipping iscsi. "
                   "Error: %s", e)
